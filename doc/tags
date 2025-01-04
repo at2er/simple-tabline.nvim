@@ -1,0 +1,11 @@
+simple-tabline-bufname	simple-tabline.txt	/*simple-tabline-bufname*
+simple-tabline-builtin-modules	simple-tabline.txt	/*simple-tabline-builtin-modules*
+simple-tabline-configuration	simple-tabline.txt	/*simple-tabline-configuration*
+simple-tabline-diagnostic	simple-tabline.txt	/*simple-tabline-diagnostic*
+simple-tabline-index	simple-tabline.txt	/*simple-tabline-index*
+simple-tabline-modified	simple-tabline.txt	/*simple-tabline-modified*
+simple-tabline-writing-module	simple-tabline-writing-module.txt	/*simple-tabline-writing-module.txt*
+simple-tabline-writing-module-location	simple-tabline-writing-module.txt	/*simple-tabline-writing-module-location*
+simple-tabline-writing-module-sample	simple-tabline-writing-module.txt	/*simple-tabline-writing-module-sample*
+simple-tabline	simple-tabline.txt	/*simple-tabline.txt*
+simple-tabline.get()	simple-tabline-writing-module.txt	/*simple-tabline.get()*

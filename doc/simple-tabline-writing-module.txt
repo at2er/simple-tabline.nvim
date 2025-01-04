@@ -1,0 +1,45 @@
+*simple-tabline-writing-module.txt*	For 'simple-tabline.nvim'
+
+=============================================================================
+1. Writing module                              *simple-tabline-writing-module*
+
+LOCATION                              *simple-tabline-writing-module-location*
+
+All module is stored in a separate lua file.
+
+SAMPLE                                  *simple-tabline-writing-module-sample*
+
+There are some built-in modules available for reference in the
+'simple-tabline.nvim/lua/simple-tabline/modules/' directory.
+This directory is in your plugins storage directory.
+Input ':lua print(vim.fn.stdpath("data"))' to find your plugins storage
+directory.
+
+>lua
+  -- Sample:
+  local M = {}
+
+  function M.get(opts, tabpage, index)
+    local s = ''
+    -- Get text...
+    return s
+  end
+
+  return M
+<
+
+FUNCTION
+
+    get({opts}, [{tabpage}], [{index}])                 *simple-tabline.get()*
+            All module must have a 'get' function.
+
+        {opts}   Module configuration.
+
+        [{tabpage}]    It has 3 field:
+            {winnr}    From |tabpagewinnr()|
+            {buflist}  From |tabpagebuflist()|
+            {bufnr}    From {buflist}[{winnr}]
+
+        [{index}]      Number of tab.
+
+vim:tw=78:ts=8:noet:ft=help:norl:

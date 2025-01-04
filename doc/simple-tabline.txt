@@ -1,0 +1,116 @@
+*simple-tabline.txt*	For neovim
+
+=============================================================================
+1. Configuration                                *simple-tabline-configuration*
+
+With lazy.nvim: >lua
+  {
+    'at2er/simple-tabline.nvim',
+    event = 'VeryLazy',
+    opts = {
+      modules = {
+        -- A module sample
+        {
+          conf = {
+            -- Module config ...
+          },
+          fallback = '[Modified]',
+          prefix = '',
+          source = 'path.to.module.source',
+          suffix = '',
+        },
+      },
+      separator = { ' ', ' ' }, -- Left and right separator.
+    },
+  }
+<
+=============================================================================
+2. Built-in modules                           *simple-tabline-builtin-modules*
+
+BUFNAME                                               *simple-tabline-bufname*
+
+Module:
+    conf.fnamemodify.mods: |fnamemodify()|'s {mods}
+    fallback: When the file have no name.
+    source: 'simple-tabline.modules.diagnostic'
+
+Sample: >lua
+  {
+    conf = {
+      fnamemodify = {
+        enable = true,
+        mods = ":t",
+      },
+    },
+    fallback = '[No Name]',
+    prefix = '',
+    source = 'simple-tabline.modules.bufname',
+    suffix = ' ',
+  }
+<
+DIAGNOSTIC                                         *simple-tabline-diagnostic*
+
+Module:
+    fallback: When the file have no diagnostic.
+    source: 'simple-tabline.modules.diagnostic'
+
+Sample: >lua
+  {
+    conf = {
+      separator = ' ',
+      err =  {
+        sign = '󰅚 ',
+        hl = 'TabLineDiagError',
+        hl_sel = 'TabLineDiagErrorSel'
+      },
+      warn = {
+        sign = '󰀪 ',
+        hl = 'TabLineDiagWarn',
+        hl_sel = 'TabLineDiagWarnSel'
+      },
+      info = {
+        sign = '󰌶 ',
+        hl = 'TabLineDiagInfo',
+        hl_sel = 'TabLineDiagInfoSel'
+      },
+      hint = {
+        sign = ' ',
+        hl = 'TabLineDiagHint',
+        hl_sel = 'TabLineDiagHintSel'
+      },
+    },
+    fallback = '',
+    prefix = '',
+    source = 'simple-tabline.modules.diagnostic',
+    suffix = '',
+  }
+<
+INDEX                                                   *simple-tabline-index*
+
+Module:
+    fallback: Never use.
+    source: 'simple-tabline.modules.index'
+
+Sample: >lua
+  {
+    fallback = '',
+    prefix = '',
+    source = 'simple-tabline.modules.index',
+    suffix = ':',
+  }
+<
+MODIFIED                                             *simple-tabline-modified*
+
+Module:
+    fallback: Always use it.
+    source: 'simple-tabline.modules.modified'
+
+Sample: >lua
+  {
+    fallback = '[+]',
+    prefix = '',
+    source = 'simple-tabline.modules.modify',
+    suffix = '',
+  }
+<
+vim:tw=78:ts=8:noet:ft=help:norl:
